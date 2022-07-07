@@ -4,7 +4,7 @@ services:
   web:
     container_name: test_service
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python mange.py test & python manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"
     volumes:
