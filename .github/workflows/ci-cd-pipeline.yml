@@ -10,11 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: docker-build
-        run: docker compose build
-      
-      - name: docker compose run
-        run : docker compose up
+        run: docker-compose -f "docker-compose.yml" up -d --build
 
       - name: Stop containers
         if: always()
-        run: docker compose down
+        run: docker-compose -f "docker-compose.yml" down
