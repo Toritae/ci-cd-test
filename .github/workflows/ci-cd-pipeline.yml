@@ -9,9 +9,12 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - name: docker-build & start
-        run: docker-compose -f "docker-compose.yml" up -d --build
+      - name: docker-build
+        run: docker compose build
+      
+      - name: docker compose run
+        run : docker compose up
 
       - name: Stop containers
         if: always()
-        run: docker-compose -f "docker-compose.yml" down
+        run: docker compose down
