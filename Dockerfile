@@ -4,7 +4,7 @@ RUN mkdir /code
 WORKDIR /code
 #RUN pip uninstall django
 COPY requirement.txt /code/
-RUN pip install -r requirement.txt
+RUN pip install -r requirements.txt
 COPY . /code/
 ENV DOCKERIZE_VERSION v0.6.1
 
